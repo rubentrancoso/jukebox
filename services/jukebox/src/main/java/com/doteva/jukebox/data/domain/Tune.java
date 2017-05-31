@@ -19,15 +19,18 @@ public class Tune {
 	private Long id;
 
 	private String name;
-	
+
 	private Date releaseYear;
 
 	@OneToMany
 	private List<Artist> artists;
 
+	@OneToOne
+	private Album originalAlbum;
+
 	@OneToMany
 	private List<Album> albuns;
-	
+
 	@OneToOne
 	private Genre genre;
 
@@ -54,12 +57,12 @@ public class Tune {
 		this.artists = artists;
 	}
 
-	public List<Album> getAlbuns() {
-		return albuns;
+	public Album getOriginalAlbum() {
+		return originalAlbum;
 	}
 
-	public void setAlbuns(List<Album> albuns) {
-		this.albuns = albuns;
+	public void setOriginalAlbum(Album originalAlbum) {
+		this.originalAlbum = originalAlbum;
 	}
 
 	public Date getReleaseYear() {
@@ -76,6 +79,14 @@ public class Tune {
 
 	public void setGenre(Genre genre) {
 		this.genre = genre;
+	}
+
+	public List<Album> getAlbuns() {
+		return albuns;
+	}
+
+	public void setAlbuns(List<Album> albuns) {
+		this.albuns = albuns;
 	}
 
 }

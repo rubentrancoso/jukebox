@@ -39,9 +39,6 @@ public class Playlist {
 
 	public void setTunes(List<Tune> tunes) {
 		this.tunes = tunes;
-	}
-	
-	
-
+	}	
 	
 }
