@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.doteva</groupId>
-	<artifactId>jukebox</artifactId>
+	<artifactId>jukebox-jpa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>jukebox</name>
+	<name>jukebox-jpa</name>
 	<description>Online playlist voting system</description>
 
 	<parent>
