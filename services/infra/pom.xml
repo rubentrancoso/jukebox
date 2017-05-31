@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.doteva.jukebox</groupId>
-	<artifactId>services</artifactId>
+	<artifactId>infra</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>services</name>
+	<name>infra</name>
 	<description>Online playlist voting system</description>
 	
 	<properties>
@@ -18,7 +18,7 @@
 	</properties>	
 
 	<modules>
-		<module>infra</module>
+		<module>configserver</module>
 	</modules>
 
 </project>
