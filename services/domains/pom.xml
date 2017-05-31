@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.doteva.jukebox</groupId>
-	<artifactId>services</artifactId>
+	<artifactId>domains</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -18,7 +18,7 @@
 	</properties>	
 
 	<modules>
-		<module>domains</module>
+		<module>jukebox</module>
 	</modules>
 
 </project>
