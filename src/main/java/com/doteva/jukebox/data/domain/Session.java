@@ -16,21 +16,21 @@ public class Session {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	@OneToMany
-	private List<Rank> poll;
-	
+	private List<Rank> rank;
+
 	@OneToOne
 	private User user;
 
 	public Session() {}
-	
-	public List<Rank> getPoll() {
-		return poll;
+
+	public List<Rank> getRank() {
+		return rank;
 	}
 
-	public void setPoll(List<Rank> poll) {
-		this.poll = poll;
+	public void setRank(List<Rank> rank) {
+		this.rank = rank;
 	}
 
 	public User getUser() {
@@ -41,5 +41,4 @@ public class Session {
 		this.user = user;
 	}
 
-	
 }

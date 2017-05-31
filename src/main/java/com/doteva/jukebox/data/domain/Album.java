@@ -7,34 +7,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @Entity
-public class Tune {
+public class Album {
 
 	@Id
 	@GeneratedValue
 	private Long id;
 
-	private String name;
-	
-	private Date releaseYear;
+	@OneToMany
+	private List<Tune> tunes;
 
 	@OneToMany
 	private List<Artist> artists;
 
-	@OneToMany
-	private List<Album> albuns;
-	
-	@OneToOne
-	private Genre genre;
+	private String name;
 
-	public Tune() {
+	private Date releaseYear;
+
+	public Album() {
 	}
 
-	public Tune(String name) {
+	public Album(String name) {
 		this.name = name;
 	}
 
@@ -46,6 +42,14 @@ public class Tune {
 		this.name = name;
 	}
 
+	public List<Tune> getTunes() {
+		return tunes;
+	}
+
+	public void setTunes(List<Tune> tunes) {
+		this.tunes = tunes;
+	}
+
 	public List<Artist> getArtists() {
 		return artists;
 	}
@@ -54,28 +58,12 @@ public class Tune {
 		this.artists = artists;
 	}
 
-	public List<Album> getAlbuns() {
-		return albuns;
-	}
-
-	public void setAlbuns(List<Album> albuns) {
-		this.albuns = albuns;
-	}
-
 	public Date getReleaseYear() {
 		return releaseYear;
 	}
 
 	public void setReleaseYear(Date releaseYear) {
 		this.releaseYear = releaseYear;
-	}
-
-	public Genre getGenre() {
-		return genre;
-	}
-
-	public void setGenre(Genre genre) {
-		this.genre = genre;
 	}
 
 }

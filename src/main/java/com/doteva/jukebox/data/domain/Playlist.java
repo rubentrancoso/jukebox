@@ -18,20 +18,12 @@ public class Playlist {
 	private Long id;
 	
 	@OneToMany
-	private List<Tune> list;
+	private List<Tune> tunes;
 
 	@OneToOne
 	private User user;	
 
 	public Playlist() {}
-	
-	public List<Tune> getList() {
-		return list;
-	}
-
-	public void setList(List<Tune> list) {
-		this.list = list;
-	}
 
 	public User getUser() {
 		return user;
@@ -39,6 +31,14 @@ public class Playlist {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public List<Tune> getTunes() {
+		return tunes;
+	}
+
+	public void setTunes(List<Tune> tunes) {
+		this.tunes = tunes;
 	}
 	
 	

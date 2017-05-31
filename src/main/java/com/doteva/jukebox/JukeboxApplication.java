@@ -32,7 +32,7 @@ public class JukeboxApplication {
 		User user;
 		List<Playlist> playlists;
 		Playlist playlist;
-		List<Tune> list;
+		List<Tune> tunes;
 		Tune tune;
 		List<Session> sessions;
 		Session session;
@@ -43,7 +43,7 @@ public class JukeboxApplication {
 		playlist = new Playlist();
 		sessions = new ArrayList<Session>();
 		session = new Session();
-		list = new ArrayList<Tune>();
+		tunes = new ArrayList<Tune>();
 		rankList = new ArrayList<Rank>();
 		
 		user = new User();
@@ -58,7 +58,7 @@ public class JukeboxApplication {
 		
 		tune = new Tune("Rock");
 		tuneDAO.save(tune);
-		list.add(tune);
+		tunes.add(tune);
 		rank = new Rank();
 		rank.setTune(tune);
 		rank.setVotes(4L);
@@ -67,14 +67,14 @@ public class JukeboxApplication {
 		
 		tune = new Tune("Soul");
 		tuneDAO.save(tune);
-		list.add(tune);
+		tunes.add(tune);
 		rank = new Rank();
 		rank.setTune(tune);
 		rank.setVotes(3L);
 		rankDAO.save(rank);
 		rankList.add(rank);
 		
-		playlist.setList(list);
+		playlist.setTunes(tunes);
 		user = userDAO.findOne(1L);
 		playlist.setUser(userDAO.findOne(1L));
 		playlistDAO.save(playlist);
@@ -82,10 +82,10 @@ public class JukeboxApplication {
 
 		playlist = new Playlist();
 
-		list = new ArrayList<Tune>();
+		tunes = new ArrayList<Tune>();
 		tune = new Tune("Disco");
 		tuneDAO.save(tune);
-		list.add(tune);
+		tunes.add(tune);
 		rank = new Rank();
 		rank.setTune(tune);
 		rank.setVotes(2L);
@@ -94,19 +94,19 @@ public class JukeboxApplication {
 		
 		tune = new Tune("Classic");
 		tuneDAO.save(tune);
-		list.add(tune);
+		tunes.add(tune);
 		rank = new Rank();
 		rank.setTune(tune);
 		rank.setVotes(1L);
 		rankDAO.save(rank);
 		rankList.add(rank);
 		
-		playlist.setList(list);
+		playlist.setTunes(tunes);
 		playlist.setUser(userDAO.findOne(2L));
 		playlistDAO.save(playlist);
 		
 		session.setUser(user);
-		session.setPoll(rankList);
+		session.setRank(rankList);
 		sessions.add(session);
 		playlists.add(playlist);
 		sessionDAO.save(session);
