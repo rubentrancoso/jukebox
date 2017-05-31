@@ -6,3 +6,6 @@ spring:
         git:
           uri: https://github.com/rubentrancoso/jukebox/tree/master/services/infra/configserver
           searchPaths: configdata
+management:
+  security:
+    enabled: false
